@@ -7,30 +7,34 @@
  </head>
  
  <body>
-    <p>
-     <?php
-     function sort_1($array, $order) {
+ <p>
+        <?php
+        function sort_2way($array, $order) {
+            if ($order) {
+                echo '昇順にソートします。<br>';
+                sort($array);
+            } else {
+                echo '降順にソートします。<br>';
+                rsort($array);
+            }
 
-        if ($order) {
-            echo '昇順にソートします。<br>';
-            sort($array);
-        }else {
-            echo '降順にアソートします。<br>';
-            rsort($array);
+            foreach($array as $num) {
+                echo $num . '<br>';
+            }
         }
 
-        foreach($array as $num) {
-            echo $num . '<br>';
-        }
-     }
-     $nums = [15 , 4 , 18 , 23 , 10];  // 関数を定義する
-     $order = true; //　昇順にソートする
+        // ソート対象の配列
+        $nums = [15, 4, 18, 23, 10];
 
-     sort_1($nums , $order);
+        // 昇順にソートする場合
+        $order = true;
+        sort_2way($nums, $order);
 
-     $order = false; //　降順にアソートする
-     
-     sort_1($nums , $order);
+        echo '<br>'; // 区切りとしての改行を挿入
+
+        // 降順にソートする場合
+        $order = false;
+        sort_2way($nums, $order);
         ?>
     </p>
  </body>
