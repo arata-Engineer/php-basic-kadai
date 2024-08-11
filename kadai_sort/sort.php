@@ -8,33 +8,29 @@
  
  <body>
     <p>
-        <?php
-            echo '昇順にソートします。';
-        ?>
-    </p>
-    <p>
      <?php
-        $ar1 = array('15' , '4' , '18' , '23' , '10');
-        
-        sort($ar1);
-        foreach ($ar1 as $val) {
-            echo $val . '<br>';
+     function sort_1($array, $order) {
+
+        if ($order) {
+            echo '昇順にソートします。<br>';
+            sort($array);
+        }else {
+            echo '降順にアソートします。<br>';
+            rsort($array);
         }
-        ?>
-    </p>
-    <p>
-        <?php
-            echo '降順にソートします。';
-        ?>
-    </p>
-    <p>
-        <?php
-        $ar1 = array('15' , '4' , '18' , '23' , '10');
-        
-        rsort($ar1);
-        foreach ($ar1 as $val) {
-            echo $val . '<br>';
+
+        foreach($array as $num) {
+            echo $num . '<br>';
         }
+     }
+     $nums = [15 , 4 , 18 , 23 , 10];  // 関数を定義する
+     $order = true; //　昇順にソートする
+
+     sort_1($nums , $order);
+
+     $order = false; //　降順にアソートする
+     
+     sort_1($nums , $order);
         ?>
     </p>
  </body>
