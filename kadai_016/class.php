@@ -3,25 +3,27 @@ class Food {
     private $name;
     private $price;
 
-    public function show_price(int $price) {
-        $this->price = 250;
+    public function show_price() {
         echo $this->price . '<br>';
     }
+
     public function __construct(string $name, int $price) {
         $this->name = $name;
         $this->price =$price;
     }   
 }
+
 $food = new Food('potato', 250);
 print_r($food);
 echo '<br>';
+$food->show_price();  // メソッド呼び出しを修正
 
 class Animal {
     private $name;
     private $height;
     private $weight;
-    public function show_height(int $height) {
-        $this->height = 60;
+
+    public function show_height() {
         echo $this->height . '<br>';
     }
     public function __construct(string $name, int $height, int $weight) {
@@ -31,12 +33,10 @@ class Animal {
     }     
 }
 
-$animal= new Animal('dog', 60, 5000);
+$animal = new Animal('dog', 60, 5000);
 print_r($animal);
-
-$food->show_price(250);
-
-$animal->show_height(60);
+echo '<br>';
+$animal->show_height();  // メソッド呼び出しを修正
 
 ?>
 
