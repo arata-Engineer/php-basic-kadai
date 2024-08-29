@@ -16,11 +16,7 @@ body {
     line-height: 3.5rem;
   }
   
-  a,
-  button {
-    transition: 0.3s;
-  }
-
+ 
   .books-ui div {
     display: flex;
     align-items: flex-end;
@@ -55,6 +51,12 @@ body {
     border: none;
     outline: 0;
   }
+
+  a,
+  button {
+    transition: 0.3s;
+  }
+
   
   nav a {
     margin-left: 0.75rem;
